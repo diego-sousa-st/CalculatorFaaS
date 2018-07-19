@@ -1,0 +1,54 @@
+.d-flex.justify-content-center.align-items-center#calculadora
+	.calc
+		.row
+			.col-12
+				label.result Resultado
+		.row
+			.col-12
+				.boxResult(*ngIf="resultado === ''")
+					label.mx-0.my-0 {{ operacao }}
+				.boxResult(*ngIf="resultado !== ''")
+					label.mx-0.my-0 {{ resultado }}
+		.row.my-2
+			.col-3
+				button.btn.btn-secondary((click)="append('7')") 7
+			.col-3
+				button.btn.btn-secondary((click)="append('8')") 8
+			.col-3
+				button.btn.btn-secondary((click)="append('9')") 9
+			.col-3
+				button.btn.btn-secondary((click)="append('+')") +
+		.row.my-2
+			.col-3
+				button.btn.btn-secondary((click)="append('4')") 4
+			.col-3
+				button.btn.btn-secondary((click)="append('5')") 5
+			.col-3
+				button.btn.btn-secondary((click)="append('6')") 6
+			.col-3
+				button.btn.btn-secondary((click)="append('-')") -
+		.row.my-2
+			.col-3
+				button.btn.btn-secondary((click)="append('1')") 1
+			.col-3
+				button.btn.btn-secondary((click)="append('2')") 2
+			.col-3
+				button.btn.btn-secondary((click)="append('3')") 3
+			.col-3
+				button.btn.btn-secondary((click)="append('*')") X
+		.row.my-2
+			.col-3
+				button.btn.btn-secondary((click)="append('0')") 0
+			.col-3
+				button.btn.btn-secondary((click)="append('.')") .
+			.col-3
+				button.btn.btn-secondary((click)="append('(')") (
+			.col-3
+				button.btn.btn-secondary((click)="append(')')") )
+		.row.my-2
+			.col-3
+				button.btn.btn-primary((click)="undo()") CE
+			.col-3
+				button.btn.btn-primary((click)="clear()") C
+			.col-6
+				button.btn.btn-danger((click)="evaluate()") =
